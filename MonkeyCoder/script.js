@@ -11,8 +11,7 @@ maxTime = 60,
 timeLeft = maxTime,
 charIndex = mistakes = isTyping = 0;
 let animationFinished = false;
-
-
+  
   // Функция для отображения абзацев на странице
   function displayParagraphs(paragraphs) {
     const ranIndex = Math.floor(Math.random() * paragraphs.length);
@@ -80,41 +79,8 @@ function initTyping() {
     } else {
         clearInterval(timer);
         inpField.value = "";
-
     }   
-   
-    
 }
-document.addEventListener('keydown', (event) => {
-    if (event.key === 'Tab') {
-        event.preventDefault();
-        const spaces = '    '; // четыре пробела
-        const cursorPosition = inpField.selectionStart; // Получаем текущую позицию курсора
-        const value = inpField.value;
-        const textBeforeCursor = value.substring(0, cursorPosition);
-        const textAfterCursor = value.substring(cursorPosition, value.length);
-
-        // Вставляем пробелы по позиции курсора
-        inpField.value = textBeforeCursor + spaces + textAfterCursor;
-
-        // Перемещаем курсор в конец вставленных пробелов
-        const newCursorPosition = cursorPosition + spaces.length;
-        inpField.setSelectionRange(newCursorPosition, newCursorPosition);
-
-        // Обновляем `charIndex` только при успешной вставке пробелов
-        if (inpField.value.charAt(cursorPosition) === ' ') {
-            charIndex += spaces.length;
-        }
-
-        // Установить фокус на поле ввода после вставки пробелов
-        // inpField.focus();
-
-        // Обеспечить видимость текстового курсора
-        inpField.selectionStart = newCursorPosition;
-        inpField.selectionEnd = newCursorPosition;
-    }
-});
-  
 
 function initTimer() {
     if(timeLeft > 0) {

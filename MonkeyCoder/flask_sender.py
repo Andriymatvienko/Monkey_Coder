@@ -1,17 +1,22 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_cors import CORS
-from Parser import Parser 
+from JP import Java
+from PP import Python
+import random
 
-class Flask():
-    app = Flask(__name__)
-    CORS(app)
+app = Flask(__name__)
+CORS(app)
 
-    @app.route('/api/data', methods=['GET'])
-    def get_paragraphs():
-        data = [Parser.cleaner()]
-        return jsonify(data)
+@app.route('/api/data', methods=['GET'])
+def get_cleaned_code():
+    language = request.args.get('language')
+    if language == 'python':
+        data = [Python.clean_python_code()]
+    elif language == 'java':
+        data = [Java.clean_java_code()]
+    else:
+        data = ["Choose your lang"]
+    return jsonify(data)
 
-    if __name__ == '__main__':
-        app.run(host='0.0.0.0', port=8080)
-
-    CORS(app, resources={r"/api/*": {"origins": "http://127.0.0.1:5501"}})
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8080)

@@ -14,8 +14,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  /* background: linear-gradient(45deg, #17A2B8, #753a88); Установите фон как градиент */
-  background-color: black;
+  background: linear-gradient(45deg, #17A2B8, #753a88); /* Установите фон как градиент */
   background-size: 400% 400%;
   caret-shape: block;
   animation: slide 10s ease-out infinite;
