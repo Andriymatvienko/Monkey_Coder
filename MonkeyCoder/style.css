@@ -130,10 +130,12 @@ body {
   cursor: pointer;
   border-radius: 5px;
   background: #17A2B8;
-  transition: transform 0.5s ease;
+  box-shadow: 0 4px #999;
 }
 .content button:active{
-  transform: scale(0.97);
+  background-color: #179baf;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 .content .result-details{
   display: flex;
@@ -238,3 +240,23 @@ li:not(:first-child) span{
 span.active {
   animation: blinker 1s infinite;
 } */
+
+.switch_btn{
+  outline: none;
+  border: none;
+  width: 105px;
+  color: #fff;
+  padding: 8px 0;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  background: #17A2B8;
+  box-shadow: 0 4px #999;
+  
+}
+.switch_btn:active{
+  background-color: #179baf;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+  
+}
