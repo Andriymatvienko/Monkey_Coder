@@ -48,6 +48,7 @@ body {
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+ margin-top: 125px;
 }
 .wrapper .input-field{
   opacity: 0;
@@ -259,4 +260,21 @@ span.active {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
   
+}
+
+.monkey {
+  height: 250px;
+  position: absolute;
+  
+  left:50%;
+  transform: translateX(-50%);
+  margin-bottom: 20px;
+}
+
+.monkey .monkey_logo{
+  height: 250px;
+  position: relative;
+  bottom:22rem;
+  left:50%;
+  transform: translateX(-50%);
 }
